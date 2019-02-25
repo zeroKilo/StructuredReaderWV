@@ -26,10 +26,10 @@ namespace StructuredReaderWV
             while (true)
             {
                 peek = sr.Peek();
-                if (test.Contains((char)peek))
-                    sr.Read(dummy, 0, 1);
-                else
-                    break;
+				if (test.Contains((char)peek))
+					sr.Read(dummy, 0, 1);
+				else
+					break;
             }
             List<Token> tmp = new List<Token>() { new TokenAlpha(), new TokenNumeric(), new TokenSpecial() };
             foreach(Token t in tmp)
@@ -49,6 +49,7 @@ namespace StructuredReaderWV
         public string detect;
         public string allowed;
         public bool isSpecial = false;
+		public bool isHex = false;
         public bool isCharThisType(char c)
         {
             return detect.Contains(c);
@@ -72,7 +73,7 @@ namespace StructuredReaderWV
                 if (isSpecial)
                     break;
             }
-            text = sb.ToString().ToLower();
+			text = sb.ToString().ToLower();
         }
     }
 
@@ -82,7 +83,7 @@ namespace StructuredReaderWV
         {
             name = "Text";
             detect = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
-            allowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-0123456789";
+            allowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-0123456789xX";
         }
     }
 

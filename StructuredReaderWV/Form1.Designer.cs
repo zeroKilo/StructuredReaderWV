@@ -194,7 +194,6 @@
 			this.hb1.Location = new System.Drawing.Point(0, 24);
 			this.hb1.Name = "hb1";
 			this.hb1.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
-			this.hb1.ReadOnly = true;
 			this.hb1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
 			this.hb1.Size = new System.Drawing.Size(642, 210);
 			this.hb1.StringViewVisible = true;
