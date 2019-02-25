@@ -83,5 +83,12 @@ namespace StructuredReaderWV
             bigToolStripMenuItem.Checked = true;
             littleToolStripMenuItem.Checked = !bigToolStripMenuItem.Checked;
         }
-    }
+
+		private void hb1_CurrentLineChanged(object sender, EventArgs e)
+		{
+			label1.ResetText();
+			for (int i = 0; i < hb1.HorizontalByteCount; i++)
+				label1.Text += String.Format("0{0:X} ", i);
+		}
+	}
 }
