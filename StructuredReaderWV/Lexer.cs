@@ -55,6 +55,18 @@ namespace StructuredReaderWV
                                             def.types.Add(tdef);
                                             pos += 3;
                                         }
+                                        else if (input[pos] is TokenNumeric && 
+                                                 input[pos].text == "0" &&
+                                                 input[pos + 1] is TokenAlpha  &&
+                                                 input[pos + 1].text.ToLower().StartsWith("x") &&
+                                                 input[pos + 2].text == "]" &&
+                                                 input[pos + 3].text == ";")
+                                        {
+                                            tdef.isArray = true;
+                                            tdef.size = Convert.ToInt32(input[pos + 1].text.Substring(1), 16);
+                                            def.types.Add(tdef);
+                                            pos += 4;
+                                        }
                                         else
                                             throw new Exception("Expected array definition");
                                     }

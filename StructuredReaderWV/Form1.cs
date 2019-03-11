@@ -39,6 +39,7 @@ namespace StructuredReaderWV
             StructuredReader.littleEndian = littleToolStripMenuItem.Checked;
             if (binary != null)
                 rtb2.Text = StructuredReader.Read(structs, binary);
+            hb1.ColumnInfoVisible = true;
 
         }
 
